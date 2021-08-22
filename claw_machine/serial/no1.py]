@@ -1,0 +1,27 @@
+import serial
+import time
+
+def Read_Weight():
+        while 1:
+                ser = serial.Serial(
+                        port='/dev/ttyACM0',
+                        baudrate = 115200,
+                        bytesize = serial.EIGHTBITS,
+                        parity = serial.PARITY_NONE,
+                        stopbits = serial.STOPBITS_ONE,
+                        xonxoff = False,
+                        rtscts = False,
+                        dsrdtr = False,
+                        timeout = 1
+                        )
+
+                #force = False
+
+
+
+                data = ser.readline()
+                return data
+
+while 1:
+       x = ser.readline()
+       print x
